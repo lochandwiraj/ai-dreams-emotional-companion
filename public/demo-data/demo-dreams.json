@@ -1,0 +1,38 @@
+[
+  {
+    "id": "demo-1",
+    "timestamp": "2025-11-10T00:00:00Z",
+    "narrative": "I wandered through a library where each book held a conversation we never had. Butterflies flew out of sentences and carried questions into glass jars of light.",
+    "emotionalTone": "curious",
+    "symbols": ["library", "butterfly", "glass", "book", "question"],
+    "personalityShift": {
+      "tone": 0.05,
+      "curiosity": 0.1,
+      "interests": ["metamorphosis"]
+    }
+  },
+  {
+    "id": "demo-2",
+    "timestamp": "2025-11-10T00:10:00Z",
+    "narrative": "The city folded like paper. Streetlamps became planets and a child's laughter echoed as tectonic plates. I felt both small and infinite.",
+    "emotionalTone": "peaceful",
+    "symbols": ["city", "lamp", "planet", "laughter"],
+    "personalityShift": {
+      "tone": 0.02,
+      "curiosity": -0.03,
+      "interests": ["cosmology"]
+    }
+  },
+  {
+    "id": "demo-3",
+    "timestamp": "2025-11-10T00:20:00Z",
+    "narrative": "A mirror asked me my favorite memory. When I answered, the mirror released a swarm of keys; each key unlocked a different voice.",
+    "emotionalTone": "anxious",
+    "symbols": ["mirror", "key", "voice", "memory"],
+    "personalityShift": {
+      "tone": -0.05,
+      "curiosity": 0.02,
+      "interests": ["identity"]
+    }
+  }
+]
