@@ -60,9 +60,9 @@ export const useStore = create<Store>()(
         // Apply personality shift with clamping
         const personality = { ...s.personality };
         Object.entries(dream.personalityShift).forEach(([key, delta]) => {
-          if (key in personality && typeof personality[key] === 'number') {
-            personality[key] = Math.max(0, Math.min(1, 
-              personality[key] + Math.max(-0.15, Math.min(0.15, delta))
+          if (key in personality && typeof (personality as any)[key] === 'number') {
+            (personality as any)[key] = Math.max(0, Math.min(1, 
+              (personality as any)[key] + Math.max(-0.15, Math.min(0.15, delta))
             ));
           }
         });
@@ -77,8 +77,8 @@ export const useStore = create<Store>()(
       updatePersonality: (shift) => set((s) => {
         const personality = { ...s.personality };
         Object.entries(shift).forEach(([key, delta]) => {
-          if (key in personality && typeof personality[key] === 'number') {
-            personality[key] = Math.max(0, Math.min(1, personality[key] + delta));
+          if (key in personality && typeof (personality as any)[key] === 'number') {
+            (personality as any)[key] = Math.max(0, Math.min(1, (personality as any)[key] + delta));
           }
         });
         return { personality };

@@ -6,7 +6,7 @@ import { BlendFunction } from 'postprocessing';
 import { useAIStore } from '../../store/aiStore';
 
 export function Effects() {
-  const { gl, scene, camera } = useThree();
+  const { gl } = useThree();
   const { state } = useAIStore();
 
   // Strengths map by state
@@ -28,7 +28,7 @@ export function Effects() {
 
   return (
     // We pass camera & gl via context automatically in r3f
-    <EffectComposer multisampling={0} autoClear={false} blendFunction={BlendFunction.NORMAL}>
+    <EffectComposer multisampling={0} autoClear={false}>
       <Bloom
         luminanceThreshold={0.15}
         luminanceSmoothing={0.9}
@@ -37,7 +37,7 @@ export function Effects() {
       />
       <ChromaticAberration
         blendFunction={BlendFunction.NORMAL}
-        offset={[s.chroma, s.chroma]}
+        offset={[s.chroma, s.chroma] as any}
       />
       <Vignette eskil={false} offset={0.6} darkness={s.vignette} />
     </EffectComposer>

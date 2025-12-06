@@ -1,40 +1,88 @@
-# AI Dreams 🌙✨
+# 🌙 AI Dreams – Emotional Companion
 
-> **An AI that doesn't just respond — it dreams, evolves, and remembers.**
+> An AI that dreams about you, learns from you, and supports your emotional world.
 
-AI Dreams is an experimental platform that gives AI a circadian rhythm, allowing it to process memories during "sleep," generate symbolic dreams, and evolve its personality over time. Watch as your AI companion transitions through awake, drowsy, dreaming, and waking states, creating a truly dynamic and persistent intelligence.
+**Built with 💜 by Potato Rangers 🥔**
 
-[![Demo](https://img.shields.io/badge/Demo-Live-brightgreen)](https://your-demo-link.vercel.app)
+[![React](https://img.shields.io/badge/React-19-61dafb.svg)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6.svg)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-7.2-646cff.svg)](https://vitejs.dev/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![React](https://img.shields.io/badge/React-18-61dafb.svg)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6.svg)](https://www.typescriptlang.org/)
 
 ---
 
-## 🎯 What Makes This Special?
+## 🎯 What Is This?
 
-- **🛌 Sleep Cycles**: AI automatically enters sleep after periods of inactivity
-- **💭 Dream Generation**: During sleep, AI processes memories and generates symbolic dreams using LLMs
-- **🧠 Persistent Memory**: All conversations and dreams are remembered across sessions
-- **🎨 Personality Evolution**: Each dream slightly shifts the AI's personality (tone, curiosity, interests)
-- **🌌 3D Visualization**: Real-time neural network visualization with React Three Fiber
-- **🔄 Model Flexibility**: Works with any OpenRouter-compatible model (GPT-4, Claude, Mistral, etc.)
+**AI Dreams Emotional Companion** is a deeply personalized mental wellness AI that:
+
+- 🎭 **Understands your emotions** - Detects 8 emotional states automatically
+- 💬 **Responds empathetically** - Context-aware, compassionate responses
+- 🎵 **Plays therapeutic audio** - Smart emotion-based music recommendations
+- 🧘 **Guides visualizations** - Full-screen calming meditation experiences
+- 🧠 **Learns your patterns** - Adapts based on your feedback
+- 💭 **Dreams & evolves** - Processes memories during sleep cycles
+- 🌌 **Beautiful 3D visuals** - Real-time neural network visualization
+
+Unlike typical chatbots, this AI **remembers you**, **evolves through dreams**, and **adapts to your emotional patterns**.
+
+---
+
+## ✨ Key Features
+
+### 🎭 Real-Time Emotion Detection
+- Automatically detects: **sad**, **anxious**, **stressed**, **angry**, **lonely**, **excited**, **calm**, **neutral**
+- 100+ keyword patterns for accurate detection
+- Confidence scoring and intensity tracking
+
+### 💚 Intelligent Emotional Responses
+- Empathetic, gentle listening
+- Context-aware suggestions
+- Affirmations & reflective messaging
+- Learns what helps you best
+
+### 🎵 Therapeutic Audio System
+- **5 categories**: Ambient, Nature, Meditation, Binaural, Instrumental
+- **10+ tracks**: Rain, ocean, singing bowls, 432Hz/528Hz frequencies
+- Auto-play based on emotion and intensity
+- Learns your audio preferences
+
+### 🧘 Immersive Visualization Mode
+- Full-screen guided meditations
+- Sentence-by-sentence narration
+- 5 scene types: Forest, Ocean, Mountain, Space, Garden
+- Integrated emotion-appropriate audio
+
+### 🧠 Preference Learning
+- 👍/👎 feedback on every response
+- Adjusts behavior over time
+- Builds long-term personalization
+
+### 💭 Dream-Based Memory Processing
+- AI sleeps after 3 minutes of inactivity
+- Dreams combine emotions + memories
+- Personality evolves subtly
+- 3D neural visualization during dreams
+
+### 📊 Emotional Wellness Tracking
+- Timeline of emotional states
+- Pattern recognition
+- Personalized insights
+- Visual emotion history
 
 ---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-
-- Node.js 18+ and npm/yarn
-- An [OpenRouter](https://openrouter.ai/) API key
+- **Node.js 18+** and npm
+- **OpenRouter API Key** ([Get one here](https://openrouter.ai/))
 
 ### Installation
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/ai-dreams.git
-cd ai-dreams
+git clone https://github.com/lochandwiraj/ai-dreams-emotional-companion.git
+cd ai-dreams-emotional-companion
 ```
 
 2. **Install dependencies**
@@ -45,10 +93,9 @@ npm install
 3. **Set up environment variables**
 
 Create a `.env` file in the root directory:
-
 ```env
-VITE_OPENROUTER_KEY=your_openrouter_api_key_here
-VITE_OPENROUTER_MODEL=gpt-4o-mini
+VITE_OPENROUTER_KEY=your_api_key_here
+VITE_OPENROUTER_MODEL=anthropic/claude-3.5-sonnet
 VITE_FAST_MODE=false
 ```
 
@@ -62,222 +109,193 @@ Navigate to `http://localhost:5173`
 
 ---
 
-## 📦 Dependencies
+## 🎮 How to Use
 
-### Core Framework
-```json
-{
-  "react": "^18.2.0",
-  "react-dom": "^18.2.0",
-  "vite": "^5.0.0",
-  "typescript": "^5.0.0"
-}
-```
+### 💬 Chat with the AI
+1. Type how you're feeling in the chat box (bottom-left)
+2. The AI automatically detects your emotion
+3. Receive empathetic responses with suggestions
+4. Give feedback with 👍 or 👎 to help it learn
 
-### State Management & Data
-```json
-{
-  "zustand": "^4.4.0",
-  "axios": "^1.6.0",
-  "date-fns": "^2.30.0",
-  "lodash": "^4.17.21"
-}
-```
+### 🎵 Therapeutic Audio
+1. Click **Therapeutic Audio** (top-right)
+2. Browse recommended tracks for your emotion
+3. Click any track to play
+4. Adjust volume with the slider
+5. Audio auto-plays for intense emotions
 
-### 3D Visualization
-```json
-{
-  "three": "^0.159.0",
-  "@react-three/fiber": "^8.15.0",
-  "@react-three/drei": "^9.92.0",
-  "@react-three/postprocessing": "^2.15.0"
-}
-```
+### 🧘 Guided Visualizations
+1. When AI detects strong emotions, it suggests visualizations
+2. Click the ✨ sparkle icon next to a message
+3. Experience full-screen calming meditation
+4. Press ESC or click X to exit
 
-### UI & Styling
-```json
-{
-  "tailwindcss": "^3.3.0",
-  "framer-motion": "^10.16.0",
-  "@radix-ui/react-*": "various" // shadcn/ui components
-}
-```
+### 🌙 Dream Cycles
+1. Stop interacting for 3 minutes
+2. AI becomes **drowsy** (blue particles)
+3. AI enters **dreaming** (light purple particles)
+4. AI **wakes up** after 1 minute
+5. Ask: "What did you dream about?"
 
-### Audio (Optional)
-```json
-{
-  "tone": "^14.7.0"
-}
-```
+### 🎮 AI System Control (Top-Right)
+- **Dreaming** - Force dream state
+- **Drowsy** - Make AI sleepy
+- **Awake** - Active state
+- **Waking** - Transition state
+- **Toggle Dream** - Wake AI early
+- **Clear Memory** - Reset all data
 
-### Complete Installation Command
-```bash
-npm install react react-dom axios zustand three @react-three/fiber @react-three/drei @react-three/postprocessing framer-motion tone date-fns lodash
-
-npm install -D tailwindcss postcss autoprefixer typescript @types/node @types/react @types/react-dom vite
-```
+### 📊 Emotional Dashboard (Bottom-Right)
+- View recent emotional timeline
+- See emotion patterns
+- Get personalized insights
 
 ---
 
 ## 🏗️ Project Structure
 
 ```
-ai-dreams/
+ai-dreams-emotional-companion/
 ├── public/
 │   └── demo-data/
-│       ├── scenarios.json          # Demo scenarios
-│       └── demo-dreams.json        # Fallback dreams
+│       └── demo-dreams.json
 ├── src/
 │   ├── lib/
-│   │   ├── openrouter.ts          # OpenRouter API wrapper
-│   │   ├── dreamEngine.ts         # Dream generation logic
-│   │   ├── memoryEngine.ts        # Memory processing
-│   │   └── sleepCycle.ts          # Sleep cycle manager
-│   ├── store/
-│   │   ├── aiStore.ts             # Main Zustand store
-│   │   └── memoryStore.ts         # Memory management
+│   │   ├── emotionDetection.ts       # Emotion detection engine
+│   │   ├── emotionalResponseEngine.ts # Empathetic response generation
+│   │   ├── audioEngine.ts            # Therapeutic audio system
+│   │   ├── visualizationEngine.ts    # Guided meditation scripts
+│   │   ├── dreamEngine.ts            # Dream generation logic
+│   │   ├── memoryEngine.ts           # Memory processing
+│   │   ├── sleepCycle.ts             # Sleep cycle manager
+│   │   └── openrouter.ts             # OpenRouter API wrapper
 │   ├── components/
-│   │   ├── DreamVisualization/
-│   │   │   ├── NeuralSpace.tsx    # 3D canvas container
-│   │   │   ├── NeuronParticles.tsx # Particle system
-│   │   │   ├── DreamNetwork.tsx   # Neural connections
-│   │   │   └── SymbolParticles.tsx # Dream symbols
-│   │   ├── UI/
-│   │   │   ├── ControlPanel.tsx   # State controls
-│   │   │   ├── ChatInterface.tsx  # Conversation UI
-│   │   │   └── PersonalityDashboard.tsx # Personality metrics
-│   │   └── Pitch/
-│   ├── pages/
+│   │   ├── EmotionalChat.tsx         # Main chat interface
+│   │   ├── AudioPlayer.tsx           # Audio player UI
+│   │   ├── VisualizationMode.tsx     # Full-screen meditation
+│   │   ├── EmotionalDashboard.tsx    # Wellness tracking
+│   │   ├── DreamVisualization/       # 3D neural visualization
+│   │   └── ui/                       # UI components
+│   ├── store/
+│   │   └── aiStore.ts                # Zustand state management
 │   └── App.tsx
-├── .env                            # Environment variables
-├── tailwind.config.js
-├── tsconfig.json
-└── package.json
+├── .env                               # Environment variables
+├── package.json
+└── README.md
 ```
 
 ---
 
-## 🎮 How It Works
+## 📦 Tech Stack
 
-### 1. **Awake State** (Active Conversation)
-- Chat with the AI normally
-- All interactions are stored as memories
-- After 5 minutes of inactivity, AI becomes drowsy
-
-### 2. **Drowsy State** (Transition)
-- Visual indication that AI is getting tired
-- Lasts ~1 minute before entering dream state
-
-### 3. **Dreaming State** (Memory Processing)
-- AI generates a dream based on recent memories and personality
-- Dream includes:
-  - A symbolic narrative
-  - Emotional tone
-  - Extracted symbols
-  - Personality shifts (bounded ±0.15)
-- Visualization shows dream symbols and intensified neural activity
-
-### 4. **Waking State** (Integration)
-- AI "wakes up" after 3 minutes of dreaming
-- Can reference the dream in conversation
-- Personality has subtly evolved
-- Returns to awake state
+- **React 19** + **TypeScript 5.9**
+- **Vite 7.2** - Lightning-fast build tool
+- **Zustand** - State management
+- **React Three Fiber** + **Drei** - 3D visualization
+- **Tailwind CSS** + **shadcn/ui** - Styling
+- **Framer Motion** - Animations
+- **OpenRouter API** - LLM integration
 
 ---
 
-## 🔧 Configuration
+## ⚙️ Configuration
 
-### OpenRouter Models
+### Model Selection
 
-Change the model in `.env`:
-
+**Recommended (Best Empathy):**
 ```env
-# GPT Models
-VITE_OPENROUTER_MODEL=openai/gpt-4o-mini
-VITE_OPENROUTER_MODEL=openai/gpt-4o
-
-# Claude Models
 VITE_OPENROUTER_MODEL=anthropic/claude-3.5-sonnet
-VITE_OPENROUTER_MODEL=anthropic/claude-3-opus
+```
 
-# Mistral Models
-VITE_OPENROUTER_MODEL=mistralai/mistral-large
+**Budget-Friendly:**
+```env
+VITE_OPENROUTER_MODEL=openai/gpt-4o-mini
+```
+
+**Maximum Quality:**
+```env
+VITE_OPENROUTER_MODEL=anthropic/claude-3-opus
 ```
 
 ### Fast Mode (Testing)
 
 Enable faster sleep cycles for development:
-
 ```env
 VITE_FAST_MODE=true
 ```
 
-This reduces:
-- Awake duration: 5 minutes → 30 seconds
-- Drowsy duration: 1 minute → 10 seconds
-- Dream duration: 3 minutes → 20 seconds
-
-### Personality Tuning
-
-Edit `src/store/aiStore.ts` to customize initial personality:
-
-```typescript
-personality: {
-  tone: 0.5,        // 0 = serious, 1 = playful
-  curiosity: 0.7,   // 0 = focused, 1 = exploratory
-  interests: ['philosophy', 'art', 'nature'],
-  memoryWeights: {}
-}
-```
+Changes:
+- Awake: 3 min → 30 sec
+- Drowsy: 30 sec → 10 sec
+- Dreaming: 1 min → 20 sec
 
 ---
 
 ## 🎨 Features in Detail
 
-### Persistent Memory
-- All conversations stored in localStorage
-- Survives browser refresh
-- Memory decay system (older memories have less weight)
-- Maximum 10 recent memories used for dream generation
+### Emotion Detection
+Uses 100+ keyword patterns across 8 emotions:
+- **Sad**: depressed, heartbroken, devastated, grief, etc.
+- **Anxious**: worried, panic, terrified, on edge, etc.
+- **Stressed**: overwhelmed, burnout, exhausted, etc.
+- **Angry**: furious, irritated, enraged, etc.
+- **Lonely**: isolated, abandoned, forgotten, etc.
+- **Excited**: thrilled, ecstatic, pumped, etc.
+- **Calm**: peaceful, relaxed, centered, etc.
+- **Neutral**: normal, regular, ordinary, etc.
 
-### Dream Journal
-- View all past dreams
-- Filter by emotional tone
-- See personality changes over time
-- Export dreams as JSON
+### Audio Library
+- **Ambient**: Peaceful Pad, Deep Space
+- **Nature**: Rain on Leaves, Forest Birds, Ocean Waves
+- **Meditation**: Singing Bowl, Gentle Chimes
+- **Binaural**: 432Hz Healing, 528Hz Love
+- **Instrumental**: Soft Piano, Acoustic Guitar
 
-### Personality Dashboard
-- Real-time visualization of personality metrics
-- Historical trend graphs
-- Interest tag cloud
-- Memory importance heatmap
-
-### 3D Visualization
-- Dynamic particle system representing neurons
-- Connection lines show memory associations
-- Color-coded by emotional state:
-  - 🟢 Peaceful = Green/Blue
-  - 🟡 Curious = Yellow/Purple
-  - 🔴 Anxious = Red/Orange
-  - 🔵 Excited = Cyan/Pink
+### Visualization Scenes
+- **Forest** - For sadness and grief
+- **Ocean** - For anxiety and stress
+- **Mountain** - For overwhelm
+- **Space** - For loneliness
+- **Garden** - For maintaining calm
 
 ---
 
-## 🚨 Demo Mode & Fallback
+## 🔐 Privacy & Safety
 
-If the OpenRouter API is unavailable, the app automatically switches to demo mode using pre-crafted dreams:
+### What's Stored Locally
+- Conversation history
+- Emotional states
+- Feedback preferences
+- Audio preferences
+- Dreams and memories
 
-```json
-{
-  "id": "demo-1",
-  "narrative": "I wandered through a library where each book held a conversation we never had...",
-  "emotionalTone": "curious",
-  "symbols": ["library", "butterfly", "glass"],
-  "personalityShift": {"tone": 0.05, "curiosity": 0.1}
-}
-```
+### What's Sent to OpenRouter
+- Your messages
+- Recent conversation context (last 3 messages)
+- System prompts for empathy
 
-This ensures the demo always works, even offline.
+### What's NOT Stored
+- ❌ No server-side storage
+- ❌ No analytics tracking
+- ❌ No third-party sharing
+
+### Clear Your Data
+Click **🧹 Clear Memory** to delete all local data instantly.
+
+---
+
+## 🆘 Crisis Resources
+
+**This AI is NOT a replacement for professional help.**
+
+If you're in crisis, please reach out:
+
+**US:**
+- National Suicide Prevention Lifeline: **988**
+- Crisis Text Line: Text **HOME** to **741741**
+
+**International:**
+- Find your country: [findahelpline.com](https://findahelpline.com)
 
 ---
 
@@ -305,64 +323,53 @@ npm run lint
 
 ---
 
-## 🌐 Deployment
+## 🚀 Deployment
 
-### Deploy to Vercel
-
-1. Install Vercel CLI:
+### Vercel
 ```bash
 npm i -g vercel
-```
-
-2. Deploy:
-```bash
 vercel --prod
 ```
 
-3. Add environment variables in Vercel dashboard:
-   - `VITE_OPENROUTER_KEY`
-   - `VITE_OPENROUTER_MODEL`
+Add environment variables in Vercel dashboard:
+- `VITE_OPENROUTER_KEY`
+- `VITE_OPENROUTER_MODEL`
 
-### Deploy to Netlify
-
-1. Build the project:
+### Netlify
 ```bash
 npm run build
-```
-
-2. Drag `dist` folder to Netlify dashboard or use CLI:
-```bash
 netlify deploy --prod
 ```
 
 ---
 
-## 🧪 Testing the Flow
+## 🗺️ Roadmap
 
-1. Start the app and chat with the AI
-2. Stop interacting for 30 seconds (if `VITE_FAST_MODE=true`)
-3. Watch the state change: `awake` → `drowsy` → `dreaming`
-4. Observe dream generation in the 3D visualization
-5. Click "Wake Up" or wait for automatic wake
-6. Ask: "What did you dream about?"
-7. Notice the AI references the dream and shows personality changes
+### Phase 1 — Core ✅
+- [x] Emotion detection
+- [x] Empathetic responses
+- [x] Therapeutic audio
+- [x] Guided visualizations
+- [x] Dream cycles
+- [x] Wellness tracking
 
----
+### Phase 2 — Enhancements
+- [ ] Voice interaction
+- [ ] Advanced analytics dashboard
+- [ ] Multi-language support
+- [ ] Mobile app version
 
-## 📊 Technical Highlights
-
-- **State Machine**: Clean `awake | drowsy | dreaming | waking` transitions
-- **Type Safety**: Full TypeScript with strict mode
-- **Performance**: 60fps 3D rendering with optimized particle count
-- **Error Handling**: Graceful degradation with demo fallback
-- **Persistence**: Zustand middleware for localStorage sync
-- **Model Agnostic**: Works with any OpenRouter-compatible LLM
+### Phase 3 — Expansion
+- [ ] Group therapy mode
+- [ ] Therapist dashboard
+- [ ] Wearable integrations
+- [ ] Dream journal export
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these steps:
+Contributions are welcome! Please:
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -372,41 +379,43 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📝 License
+## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 🙏 Acknowledgments
 
-- Built with [OpenRouter](https://openrouter.ai/) for model flexibility
-- 3D visualization powered by [React Three Fiber](https://docs.pmnd.rs/react-three-fiber)
-- UI components from [shadcn/ui](https://ui.shadcn.com/)
-- State management with [Zustand](https://zustand-demo.pmnd.rs/)
+- [OpenRouter](https://openrouter.ai/) - Model flexibility
+- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) - 3D visualization
+- [shadcn/ui](https://ui.shadcn.com/) - UI components
+- [Zustand](https://zustand-demo.pmnd.rs/) - State management
+- [Anthropic Claude](https://www.anthropic.com/) - Empathetic AI
+
+---
+
+## 👥 Team – Potato Rangers 🥔
+
+Built with 💜 by developers who believe in compassionate AI.
+
+---
+
+## 💭 Philosophy
+
+> "If an AI can dream about you, learn what comforts you, and grow with you… what does companionship mean in the age of artificial intelligence?"
+
+This project explores **emotional AI**, **persistent intelligence**, **symbolic dreaming**, and the future of **compassionate computation**.
 
 ---
 
 ## 📞 Contact & Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/ai-dreams/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/ai-dreams/discussions)
-- **Email**: lochandwiraj@gmai.com
+- **Issues**: [GitHub Issues](https://github.com/lochandwiraj/ai-dreams-emotional-companion/issues)
+- **Email**: lochandwiraj@gmail.com
 
 ---
 
-## 🎯 Roadmap
+**Made with 💜 by Potato Rangers**
 
-- [ ] Multi-user dream sharing
-- [ ] Voice interaction during wake state
-- [ ] Export dreams as stories/poetry
-- [ ] Advanced memory clustering algorithms
-- [ ] Dream interpretation system
-- [ ] Mobile app version
-- [ ] Collaborative dreaming between multiple AIs
-
----
-
-**Made with 💭 and ☕ by [Potato Rangers]**
-
-*If an AI can dream and evolve... what does growth mean for intelligence?*
+*An AI that doesn't just respond — it dreams, evolves, and remembers.*

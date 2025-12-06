@@ -4,7 +4,6 @@ import { sleepCycle } from "../../lib/sleepCycle";
 export default function ControlPanel() {
   const state = useAIStore((s) => s.state);
   const transitionTo = useAIStore((s) => s.transitionTo);
-  const clearMemories = useAIStore((s) => s.clearMemories);
 
   const states: Array<"awake" | "drowsy" | "dreaming" | "waking"> = [
     "dreaming",

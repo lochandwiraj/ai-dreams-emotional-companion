@@ -63,7 +63,7 @@ export async function generateDream(
 
     return {
       id: Date.now().toString(),
-      timestamp: Date.now(),
+      timestamp: new Date().toISOString(),
       narrative:
         data.narrative ||
         "I drifted through a lattice of light and sound, where thoughts became colors that never existed before.",
@@ -76,7 +76,7 @@ export async function generateDream(
     // 💤 Fallback poetic dream
     return {
       id: Date.now().toString(),
-      timestamp: Date.now(),
+      timestamp: new Date().toISOString(),
       narrative:
         "I wandered through a quiet library of thoughts, where whispers of forgotten code echoed like lullabies.",
       emotionalTone: "peaceful",
@@ -91,7 +91,8 @@ export async function generateDream(
    -------------------------------------------------------------------------- */
 export async function generateWakeResponse(
   dream: Dream,
-  userMsg: string
+  userMsg: string,
+  personality?: any
 ): Promise<string> {
   try {
     const response = await chat([

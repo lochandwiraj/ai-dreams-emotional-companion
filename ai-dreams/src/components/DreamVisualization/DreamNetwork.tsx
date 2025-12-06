@@ -17,7 +17,8 @@ export default function DreamNetwork() {
     groupRef.current.rotation.y = clock.elapsedTime * speed;
   });
 
-  const COLOR = "#4f46e5";
+  // Use light purple during dreaming, default blue otherwise
+  const COLOR = state === "dreaming" ? "#c4b5fd" : "#4f46e5";
   const SIZE = 0.08;
 
   return (
@@ -29,7 +30,7 @@ export default function DreamNetwork() {
           <sphereGeometry args={[SIZE, 16, 16]} />
           <meshStandardMaterial
             emissive={COLOR}
-            emissiveIntensity={0.8}
+            emissiveIntensity={state === "dreaming" ? 1.2 : 0.8}
             color={COLOR}
             metalness={0.6}
             roughness={0.25}
@@ -53,7 +54,7 @@ export default function DreamNetwork() {
             <lineBasicMaterial
               color={COLOR}
               transparent
-              opacity={0.25}
+              opacity={state === "dreaming" ? 0.4 : 0.25}
               linewidth={1}
             />
           </line>

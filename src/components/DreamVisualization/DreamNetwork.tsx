@@ -43,20 +43,14 @@ export default function DreamNetwork() {
         const B = memories.find((m) => m.id === b);
         if (!A || !B) return null;
 
-        const geo = new THREE.BufferGeometry().setFromPoints([
+        const points = [
           new THREE.Vector3(A.position.x, A.position.y, A.position.z),
           new THREE.Vector3(B.position.x, B.position.y, B.position.z),
-        ]);
+        ];
+        const geo = new THREE.BufferGeometry().setFromPoints(points);
 
         return (
-          <line key={i} geometry={geo}>
-            <lineBasicMaterial
-              color={COLOR}
-              transparent
-              opacity={0.25}
-              linewidth={1}
-            />
-          </line>
+          <primitive key={i} object={new THREE.Line(geo, new THREE.LineBasicMaterial({ color: COLOR, transparent: true, opacity: 0.25 }))} />
         );
       })}
 

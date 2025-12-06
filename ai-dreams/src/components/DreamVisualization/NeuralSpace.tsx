@@ -36,9 +36,9 @@ export function NeuralSpace(): JSX.Element {
         <pointLight
           position={[0, 0, 0]}
           intensity={state === 'dreaming' ? 1.6 : 0.5}
-          color={state === 'dreaming' ? '#a78bfa' : '#4361ee'}
+          color={state === 'dreaming' ? '#c4b5fd' : '#4361ee'}
         />
-        <pointLight position={[8, 6, -6]} intensity={0.18} color="#0ea5e9" />
+        <pointLight position={[8, 6, -6]} intensity={state === 'dreaming' ? 0.3 : 0.18} color={state === 'dreaming' ? '#c4b5fd' : '#0ea5e9'} />
 
         {/* Stars */}
         <Stars radius={100} depth={50} count={1800} factor={4} saturation={0.5} fade speed={0.3} />
@@ -48,7 +48,7 @@ export function NeuralSpace(): JSX.Element {
           <Effects />
         </Suspense>
 
-        {/* 🌐 MEMORY GRAPH — ADDED HERE */}
+        {/* 🌐 MEMORY GRAPH */}
         <Suspense fallback={null}>
           <DreamNetwork />  
         </Suspense>

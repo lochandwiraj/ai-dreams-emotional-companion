@@ -116,7 +116,7 @@ export async function openrouterChat(
 export async function chat(
   messages: Array<{ role: string; content: string }>
 ): Promise<string> {
-  const res = await openrouterChat(messages);
+  const res = await openrouterChat(messages as ChatMessage[]);
   return res.text;
 }
 

@@ -15,7 +15,7 @@ type VisualProfile = {
 
 const PROFILES: Record<string, VisualProfile> = {
   dreaming: {
-    colorHex: '#a78bfa', // purple
+    colorHex: '#c4b5fd', // light purple
     baseSize: 0.08,
     pulseSpeed: 6,
     pulseAmp: 0.035,
@@ -126,16 +126,9 @@ export function NeuronCloud() {
     // opacity stronger when dreaming/waking
     materialRef.current.opacity = Math.min(1, 0.35 + Math.abs(Math.sin(time * profile.pulseSpeed)) * (profile.pulseAmp * 6));
 
-    // color blending: if dreaming and a currentDream exists, we may prefer emotion
-    if (state === 'dreaming' && currentDream?.emotionalTone) {
-      const toneMap: Record<string, string> = {
-        peaceful: '#7dd3fc',
-        anxious: '#ff6b6b',
-        curious: '#a78bfa',
-        excited: '#ffd166',
-        melancholic: '#55608f',
-      };
-      const target = new THREE.Color(toneMap[currentDream.emotionalTone] ?? profile.colorHex);
+    // Always use light purple during dreaming state
+    if (state === 'dreaming') {
+      const target = new THREE.Color('#c4b5fd'); // Light purple
       materialRef.current.color.lerp(target, 0.02);
     } else {
       const target = new THREE.Color(profile.colorHex);
@@ -146,7 +139,13 @@ export function NeuronCloud() {
   return (
     <points ref={pointsRef}>
       <bufferGeometry>
-        <bufferAttribute attach="attributes-position" count={particleCount} array={positions} itemSize={3} />
+        <bufferAttribute 
+          attach="attributes-position" 
+          count={particleCount} 
+          array={positions} 
+          itemSize={3}
+          args={[positions, 3]}
+        />
       </bufferGeometry>
 
       <pointsMaterial

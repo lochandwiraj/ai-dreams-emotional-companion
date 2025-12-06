@@ -7,7 +7,7 @@ export const usePersonality = () => useAIStore(state => state.personality);
 export const useCurrentDream = () => useAIStore(state => state.currentDream);
 export const useMemories = () => useAIStore(state => state.memories);
 export const useDreams = () => useAIStore(state => state.dreams);
-export const useIsProcessing = () => useAIStore(state => state.isProcessing);
+export const useDemoMode = () => useAIStore(state => state.demoMode);
 
 // Action hooks
 export const useAIActions = () => useAIStore(state => ({

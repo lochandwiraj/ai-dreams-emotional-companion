@@ -2,6 +2,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { shouldConnect, normalize } from "../lib/similarityEngine";
+import { EmotionType } from "../lib/emotionDetection";
 
 /* ---------------------------- TYPES ---------------------------- */
 
@@ -12,6 +13,20 @@ export interface Personality {
   curiosity: number;
   interests: string[];
   memoryWeights: Record<string, number>;
+}
+
+export interface EmotionalState {
+  emotion: EmotionType;
+  confidence: number;
+  timestamp: number;
+  message: string;
+}
+
+export interface ResponseFeedback {
+  responseId: string;
+  liked: boolean;
+  emotion: EmotionType;
+  timestamp: number;
 }
 
 export interface MemoryNode {
@@ -41,6 +56,11 @@ interface AIStore {
   currentDream: Dream | null;
   lastInteraction: number;
 
+  // Emotional companion features
+  emotionalHistory: EmotionalState[];
+  feedbackHistory: ResponseFeedback[];
+  currentEmotion: EmotionType | null;
+
   memoryTrigger: number;
   clearSignal: number;
 
@@ -51,6 +71,11 @@ interface AIStore {
   applyPersonalityShift: (shift: Partial<Personality>) => void;
   updateLastInteraction: () => void;
   toggleDemoMode: () => void;
+  
+  // Emotional companion methods
+  recordEmotion: (emotion: EmotionType, confidence: number, message: string) => void;
+  recordFeedback: (responseId: string, liked: boolean, emotion: EmotionType) => void;
+  getEmotionPatterns: () => Record<EmotionType, number>;
 }
 
 const DEFAULT_PERSONALITY: Personality = {
@@ -80,6 +105,11 @@ export const useAIStore = create<AIStore>()(
       dreams: [],
       currentDream: null,
       lastInteraction: Date.now(),
+
+      // Emotional companion state
+      emotionalHistory: [],
+      feedbackHistory: [],
+      currentEmotion: null,
 
       memoryTrigger: 0,
       clearSignal: 0,
@@ -168,6 +198,47 @@ export const useAIStore = create<AIStore>()(
       updateLastInteraction: () => set({ lastInteraction: Date.now() }),
 
       toggleDemoMode: () => set((s) => ({ demoMode: !s.demoMode })),
+
+      /* ------------ EMOTIONAL COMPANION METHODS ------------ */
+      recordEmotion: (emotion, confidence, message) => {
+        set((s) => ({
+          emotionalHistory: [
+            ...s.emotionalHistory.slice(-99), // Keep last 100
+            {
+              emotion,
+              confidence,
+              timestamp: Date.now(),
+              message
+            }
+          ],
+          currentEmotion: emotion
+        }));
+      },
+
+      recordFeedback: (responseId, liked, emotion) => {
+        set((s) => ({
+          feedbackHistory: [
+            ...s.feedbackHistory,
+            {
+              responseId,
+              liked,
+              emotion,
+              timestamp: Date.now()
+            }
+          ]
+        }));
+      },
+
+      getEmotionPatterns: () => {
+        const history = get().emotionalHistory;
+        const counts: Record<string, number> = {};
+        
+        history.forEach(({ emotion }) => {
+          counts[emotion] = (counts[emotion] || 0) + 1;
+        });
+
+        return counts as Record<EmotionType, number>;
+      },
     }),
     {
       name: "ai-dreams-memory-store",
@@ -176,6 +247,8 @@ export const useAIStore = create<AIStore>()(
         connections: s.connections,
         dreams: s.dreams,
         personality: s.personality,
+        emotionalHistory: s.emotionalHistory,
+        feedbackHistory: s.feedbackHistory,
       }),
     }
   )

@@ -15,7 +15,7 @@ type VisualProfile = {
 
 // Profiles for all states (reduced motion speed)
 const PROFILES: Record<string, VisualProfile> = {
-  dreaming:  { colorHex: '#a78bfa', baseSize: 0.07, pulseSpeed: 2.0, pulseAmp: 0.045, rotationSpeed: 0.06, wobbleAmp: 0.10 },
+  dreaming:  { colorHex: '#c4b5fd', baseSize: 0.07, pulseSpeed: 2.0, pulseAmp: 0.045, rotationSpeed: 0.06, wobbleAmp: 0.10 },
   drowsy:    { colorHex: '#4361ee', baseSize: 0.045, pulseSpeed: 0.6, pulseAmp: 0.015, rotationSpeed: 0.015, wobbleAmp: 0.03 },
   awake:     { colorHex: '#06b6d4', baseSize: 0.05, pulseSpeed: 1.5, pulseAmp: 0.01, rotationSpeed: 0.03, wobbleAmp: 0.02 },
   waking:    { colorHex: '#fb923c', baseSize: 0.07, pulseSpeed: 2.2, pulseAmp: 0.03, rotationSpeed: 0.08, wobbleAmp: 0.08 },

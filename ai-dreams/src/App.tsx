@@ -7,7 +7,10 @@ import { handleConnectionFailure } from "./demo/demoMode";
 
 import NeuralSpace from "./components/DreamVisualization/NeuralSpace";
 import ControlPanel from "./components/UI/ControlPanel";
-import ChatInterface from "./components/UI/ChatInterface";
+import EmotionalChat from "./components/EmotionalChat";
+import AudioPlayer from "./components/AudioPlayer";
+import VisualizationMode from "./components/VisualizationMode";
+import EmotionalDashboard from "./components/EmotionalDashboard";
 
 import "./index.css";
 
@@ -48,25 +51,39 @@ export default function App() {
 
   return (
     <div className="relative w-screen h-screen overflow-hidden bg-black text-white font-sans">
+      {/* 3D Neural Background */}
       <NeuralSpace />
 
-      {/* Top-right control */}
-      <ControlPanel />
+      {/* Visualization Overlay */}
+      <VisualizationMode />
 
-      {/* Bottom-left chat */}
-      <ChatInterface />
+      {/* Top-right: Audio Player, State Control & Clear Memory */}
+      <div className="absolute top-6 right-6 flex flex-col gap-2 z-30">
+        <AudioPlayer />
+        <ControlPanel />
+        <button
+          onClick={clearMemories}
+          className="bg-pink-600 hover:bg-pink-700 text-white px-3 py-1.5 rounded-lg font-medium shadow-md transition-all text-xs w-full"
+        >
+          🧹 Clear Memory
+        </button>
+      </div>
 
-      {/* Bottom-right clear memory */}
-      <button
-        onClick={clearMemories}
-        className="absolute bottom-6 right-6 bg-pink-600 hover:bg-pink-700 text-white px-5 py-2 rounded-lg font-medium shadow-md transition-all"
-      >
-        🧹 Clear Memory
-      </button>
+      {/* Bottom-left: Emotional Chat */}
+      <EmotionalChat />
+
+      {/* Bottom-right: Emotional Dashboard */}
+      <EmotionalDashboard />
+
+      {/* Top-center: Title */}
+      <div className="absolute top-6 left-1/2 -translate-x-1/2 text-center z-20">
+        <h1 className="text-2xl font-light text-white/90">🌙 AI Dreams</h1>
+        <p className="text-xs text-white/50">Emotional Companion</p>
+      </div>
 
       {/* Connection warning */}
       {connected === false && (
-        <div className="absolute top-5 left-1/2 -translate-x-1/2 text-center text-red-400 text-sm bg-red-900/20 px-3 py-1 rounded-full border border-red-500/30 z-30">
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 text-center text-red-400 text-sm bg-red-900/20 px-3 py-1 rounded-full border border-red-500/30 z-30">
           ✗ Disconnected — running in demo mode
         </div>
       )}

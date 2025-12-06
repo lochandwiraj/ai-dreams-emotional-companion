@@ -6,8 +6,8 @@ import { useAIStore } from "./store/aiStore";
 import { handleConnectionFailure } from "./demo/demoMode";
 
 import NeuralSpace from "./components/DreamVisualization/NeuralSpace";
-import ControlPanel from "./components/UI/ControlPanel";
-import ChatInterface from "./components/UI/ChatInterface";
+import ControlPanel from "./components/ui/ControlPanel";
+import ChatInterface from "./components/ui/ChatInterface";
 
 import "./index.css";
 

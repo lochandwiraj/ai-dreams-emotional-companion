@@ -96,9 +96,9 @@ export function NeuralConnections() {
               opacity={state === 'dreaming' ? 0.45 : state === 'waking' ? 0.35 : 0.18}
               dashed={false}
               // simple animation via onUpdate - we animate material opacity slightly
-              onUpdate={(self) => {
+              onUpdate={(self: any) => {
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                const mat: any = (self as any).material;
+                const mat: any = self.material;
                 if (!mat) return;
                 const t = performance.now() * 0.001;
                 const pulse = 0.5 + Math.abs(Math.sin(t * (state === 'dreaming' ? 3 : 1.2))) * (state === 'dreaming' ? 0.6 : 0.25);
@@ -108,10 +108,6 @@ export function NeuralConnections() {
                 if (mat.color) mat.color.lerp(targetColor, 0.05);
               }}
               // blending to make the lines glow
-              material={{
-                blending: THREE.AdditiveBlending,
-                depthWrite: false,
-              }}
             />
           );
         })

@@ -12,7 +12,7 @@ import { useAIStore } from '../../store/aiStore';
  * - Uses Effects (post-processing) if available
  * - OrbitControls zoom enabled
  */
-export function NeuralSpace(): JSX.Element {
+export function NeuralSpace() {
   const { state } = useAIStore();
 
   return (

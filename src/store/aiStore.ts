@@ -40,6 +40,7 @@ interface AIStore {
   dreams: Dream[];
   currentDream: Dream | null;
   lastInteraction: number;
+  demoMode: boolean;
 
   memoryTrigger: number;
   clearSignal: number;
@@ -80,6 +81,7 @@ export const useAIStore = create<AIStore>()(
       dreams: [],
       currentDream: null,
       lastInteraction: Date.now(),
+      demoMode: false,
 
       memoryTrigger: 0,
       clearSignal: 0,

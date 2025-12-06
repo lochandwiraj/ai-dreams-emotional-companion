@@ -1,5 +1,6 @@
 import { addMemoryWithAnalysis } from './memoryEngine';
-import { useMemoryStore } from '../store/memoryStore';
+import { useAIStore } from '../store/aiStore';
+import { generateWakeResponse } from './dreamEngine';
 
 export async function handleUserMessage(message: string) {
   const store = useAIStore.getState();
@@ -12,7 +13,7 @@ export async function handleUserMessage(message: string) {
   
   let response: string;
   if (justWoke && store.currentDream) {
-    response = await wakeResponse(store.currentDream, message, store.personality);
+    response = await generateWakeResponse(store.currentDream, message, store.personality);
   } else {
     response = `I heard: "${message}". (normal response)`;
   }
